@@ -33,5 +33,12 @@ namespace TalkingText.Services
             var content = response.Content;
             Console.Error.WriteLineAsync(content);
         }
+
+
+
+        public string Redirect()
+        {
+            return $"https://slack.com/oauth/authorize?client_id={Configuration.GetSection("Values")["SlackClientId"]}&scope=bot files:write:user&state=1";
+        }
     }
 }
